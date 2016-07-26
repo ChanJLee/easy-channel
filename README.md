@@ -15,7 +15,7 @@ fianl String channel = appInfo.metaData.getString("UMENG_CHANNEL");
 ```
 只要将value设置为QQ，只要安装了此应用的人，都会被认为是通过QQ应用宝安装的应用。
 
-好了，科普完就讲正事。我们看看上面的代码，首先是MainActivity.this.getPackageManager()获得PackageManager，然后通过调用getApplicationInfo获得AndroidManifest.xml中的meta-data
+好了，科普完就讲正事。我们看看上面的代码，首先是MainActivity.this.getPackageManager()获得PackageManager，然后通过调用getApplicationInfo获得AndroidManifest.xml中的meta-data。之后我们的突破口就想办法从源码上下手吧
 
 
 ## 源码分析 ##
