@@ -49,7 +49,7 @@ ContextImpl.java:
 ![这里写图片描述](http://img.blog.csdn.net/20160726131023862)
 可以看到 从12:EC00h的0x7 0x8位置标志我们的注释字段有8个字节长，数一下后面的内容正好就是八个字节
 
-2：但是我们的应用如何读apk呢，毕竟它只是个安装包啊。其实很简单，我们每个安装过的应用最后都会在/data/apk/....这个路径下，获得它的方式很简单：
+2：但是我们的应用如何读apk呢，毕竟它只是个安装包啊。其实很简单，我们每个安装过的应用最后都会在/data/app/....这个路径下，获得它的方式很简单：
 
 ```
   ApplicationInfo appInfo = mContext.getPackageManager()
@@ -321,7 +321,7 @@ public class PackageManagerProxy implements InvocationHandler {
 }
 ```
 ## 获取渠道号 ##
-上面的代码还有一处我是没有注释的，那就是获得channel的方法。要知道，在我们安装一个apk之后，系统都会在/data/apk/。。。保留一份拷贝，所以理所当然的我们可以读到那个apk文件：
+上面的代码还有一处我是没有注释的，那就是获得channel的方法。要知道，在我们安装一个apk之后，系统都会在/data/app/。。。保留一份拷贝，所以理所当然的我们可以读到那个apk文件：
 
 ```
  ApplicationInfo appInfo = mContext.getPackageManager()
